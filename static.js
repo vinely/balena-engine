@@ -60095,7 +60095,7 @@ exports.default = (0, _styledComponents.withTheme)(function (props) {
       type: 'image/x-icon'
     }, {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Mono'
+      href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css'
     }],
     meta: [{
       name: 'theme-color',
@@ -60111,7 +60111,7 @@ exports.default = (0, _styledComponents.withTheme)(function (props) {
       content: props.repository.description
     }, {
       name: 'og:image',
-      content: _images2.default['logo']
+      content: _images2.default[props.repository.name]
     }]
   });
 });
@@ -88875,8 +88875,7 @@ exports.default = function (_ref) {
     pathPrefix = '' + undefined;
   }
 
-  return _react2.default.createElement('html', null, _react2.default.createElement('head', null, _react2.default.createElement('title', null, props.locals.repository.name + ' - ' + (props.locals.config.settings.lead || props.locals.repository.description)), _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }), _react2.default.createElement('link', { rel: 'stylesheet',
-    href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css' }), styleTags), _react2.default.createElement('body', null, _react2.default.createElement('div', {
+  return _react2.default.createElement('html', null, _react2.default.createElement('head', null, _react2.default.createElement('title', null, props.locals.repository.name + ' - ' + (props.locals.config.settings.lead || props.locals.repository.description)), _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }), _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Mono' }), styleTags), _react2.default.createElement('body', null, _react2.default.createElement('div', {
     id: 'mount',
     dangerouslySetInnerHTML: {
       __html: children
