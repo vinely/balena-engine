@@ -59992,6 +59992,8 @@ var _capitalize = __webpack_require__(224);
 
 var _capitalize2 = _interopRequireDefault(_capitalize);
 
+var _styledComponents = __webpack_require__(1);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -60003,7 +60005,7 @@ var pageTitle = function pageTitle(repoName, path) {
   return (0, _humanize2.default)((0, _capitalize2.default)(path.replace(/\//g, ' '))) + ' - ' + repoName;
 };
 
-exports.default = function (props) {
+exports.default = (0, _styledComponents.withTheme)(function (props) {
   return _react2.default.createElement(_reactHelmet.Helmet, {
     defaultTitle: props.repository.name,
     titleTemplate: '%s | ' + pageTitle(props.repository.name, props.location.pathname),
@@ -60016,6 +60018,9 @@ exports.default = function (props) {
       href: 'https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Mono'
     }],
     meta: [{
+      name: 'theme-color',
+      content: props.theme.colors.primary
+    }, {
       name: 'og:type',
       content: 'website'
     }, {
@@ -60029,7 +60034,7 @@ exports.default = function (props) {
       content: _images2.default['logo']
     }]
   });
-};
+});
 
 /***/ }),
 /* 568 */
@@ -88752,76 +88757,7 @@ module.exports = capitalize;
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _objectWithoutProperties(obj, keys) {
-  var target = {};for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
-  }return target;
-}
-
-exports.default = function (_ref) {
-  var children = _ref.children,
-      styleTags = _ref.styleTags,
-      scriptTags = _ref.scriptTags,
-      pages = _ref.pages,
-      props = _objectWithoutProperties(_ref, ['children', 'styleTags', 'scriptTags', 'pages']);
-
-  var locals = {
-    __html: safeStringify(props.locals)
-  };
-
-  var routeConfig = {
-    __html: safeStringify(pages)
-  };
-
-  var pathPrefix = '';
-  if (true) {
-    pathPrefix = '' + "/balena";
-  }
-
-  return _react2.default.createElement('html', null, _react2.default.createElement('head', null, styleTags), _react2.default.createElement('body', null, _react2.default.createElement('div', {
-    id: 'mount',
-    dangerouslySetInnerHTML: {
-      __html: children
-    }
-  }), _react2.default.createElement('script', {
-    id: '__LANDR__LOCALS',
-    type: 'application/json',
-    dangerouslySetInnerHTML: locals
-  }), _react2.default.createElement('script', {
-    id: '__LANDR__ROUTES',
-    type: 'application/json',
-    dangerouslySetInnerHTML: routeConfig
-  }), scriptTags.map(function (tag) {
-    return _react2.default.createElement('script', { key: tag, src: pathPrefix + tag });
-  })));
-};
-
-// Copy all properties except webpackStats (added in by Webpack), which is huge,
-// has circular references and will not be used by the React components anyways.
-// Make regex replacements to not break the HTML as well.
-
-
-function safeStringify(obj) {
-  // let objNoStats = {}
-  // for (var key in obj) {
-  //   if (obj.hasOwnProperty(key) && key != 'webpackStats') {
-  //     objNoStats[key] = obj[key]
-  //   }
-  // }
-  return JSON.stringify(obj).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--');
-}
+undefined;
 
 /***/ })
 /******/ ]);
