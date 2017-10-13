@@ -61655,7 +61655,7 @@ module.exports = require("child_process");
 "use strict";
 
 
-var _templateObject = _taggedTemplateLiteral(['\n  max-width: 100%;\n  padding: 20px;\n  overflow: scroll;\n  border-radius: ', 'px;\n  background: ', ';\n'], ['\n  max-width: 100%;\n  padding: 20px;\n  overflow: scroll;\n  border-radius: ', 'px;\n  background: ', ';\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  max-width: 100%;\n  padding: 20px;\n  overflow: auto;\n  border-radius: ', 'px;\n  background: ', ';\n'], ['\n  max-width: 100%;\n  padding: 20px;\n  overflow: auto;\n  border-radius: ', 'px;\n  background: ', ';\n']);
 
 var _react = __webpack_require__(1);
 
