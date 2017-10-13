@@ -63568,15 +63568,15 @@ var Footer = function Footer(_ref) {
   var repository = _ref.repository,
       props = _objectWithoutProperties(_ref, ['repository']);
 
-  return _react2.default.createElement(_resinComponents.Box, { py: 50, bg: props.theme.colors.gray.dark, color: 'white' }, _react2.default.createElement(_resinComponents.Flex, { my: 2, align: 'center', justify: 'center', wrap: true }, _react2.default.createElement(_Link2.default, { target: true, to: '/' }, _react2.default.createElement(_resinComponents.Image, {
+  return _react2.default.createElement(_resinComponents.Box, { py: 50, bg: props.theme.colors.gray.dark, color: 'white' }, _react2.default.createElement(_resinComponents.Flex, { mb: 3, align: 'center', justify: 'center', wrap: true }, _react2.default.createElement(_Link2.default, { target: true, to: '/' }, _react2.default.createElement(_resinComponents.Image, {
     mr: 3,
     style: { height: '35px' },
     src: _images2.default[repository.name]
-  })), _react2.default.createElement(_resinComponents.Text.span, null, 'An open source project by'), _react2.default.createElement(_Link2.default, { target: true, to: 'https://resin.io' }, _react2.default.createElement(_resinComponents.Image, {
+  })), _react2.default.createElement(_resinComponents.Text.span, null, 'is an open source project by'), _react2.default.createElement(_Link2.default, { target: true, to: 'https://resin.io' }, _react2.default.createElement(_resinComponents.Image, {
     ml: 3,
     style: { height: '30px' },
     src: _resin2.default
-  }))), _react2.default.createElement(_resinComponents.Box, null, _react2.default.createElement(_resinComponents.Text, { color: 'gray.main', align: 'center' }, (0, _get2.default)(repository, 'license.name'))));
+  }))), _react2.default.createElement(_resinComponents.Box, null, _react2.default.createElement(_resinComponents.Text, { fontSize: '14px', color: 'gray.main', align: 'center' }, repository.name, ' is released under ', (0, _get2.default)(repository, 'license.name'))));
 };
 
 exports.default = (0, _styledComponents.withTheme)(Footer);
