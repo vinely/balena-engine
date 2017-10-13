@@ -63461,9 +63461,9 @@ var Nav = (0, _styledComponents.withTheme)(function (_ref) {
   return _react2.default.createElement('div', null, _react2.default.createElement(_resinComponents.Box, {
     bg: 'gray.dark',
     color: 'white'
-  }, _react2.default.createElement(_resinComponents.Container, { align: 'left' }, _react2.default.createElement(_resinComponents.Box, { p: 2 }, _react2.default.createElement(_resinComponents.Flex, { align: 'center' }, _react2.default.createElement(_resinComponents.Text.span, null, 'An open source project by'), _react2.default.createElement(_Link2.default, { target: true, to: 'https://resin.io' }, _react2.default.createElement(_resinComponents.Image, {
+  }, _react2.default.createElement(_resinComponents.Container, { align: 'left' }, _react2.default.createElement(_resinComponents.Box, { pt: 2, pl: 2 }, _react2.default.createElement(_resinComponents.Flex, { align: 'center' }, _react2.default.createElement(_resinComponents.Text.span, { fontSize: '12px' }, 'An open source project by'), _react2.default.createElement(_Link2.default, { target: true, to: 'https://resin.io' }, _react2.default.createElement(_resinComponents.Image, {
     ml: 2,
-    style: { height: '25px' },
+    style: { height: '20px' },
     src: _resin2.default
   })))))), _react2.default.createElement(_resinComponents.Navbar, {
     align: 'center',
