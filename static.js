@@ -62924,7 +62924,7 @@ exports.default = function (props) {
       h: ['100px', '70px'],
       w: ['50px', '70px'],
       src: _images2.default['' + feature.image]
-    }))), _react2.default.createElement(_resinComponents.Heading.h4, { mb: 2, align: 'center' }, feature.title), _react2.default.createElement(_resinComponents.Text, {
+    }))), _react2.default.createElement(_resinComponents.Heading.h4, { mb: 2, align: 'center' }, feature.title), _react2.default.createElement(_resinComponents.Text.p, {
       align: 'center',
       dangerouslySetInnerHTML: { __html: feature.description }
     }));
