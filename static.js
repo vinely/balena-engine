@@ -60953,7 +60953,7 @@ exports.default = function (props) {
     'data-show-count': 'true'
   }, 'Star')), _react2.default.createElement(_resinComponents.Box, { mx: 1 }, _react2.default.createElement(_reactTwitterWidgets.Share, {
     options: {
-      text: props.repository.name + ' - ' + props.repository.description
+      text: props.repository.name + ' - ' + (props.config.settings.lead || props.repository.description)
     },
     url: ''
   }, 'Tweet'))), _react2.default.createElement(_resinComponents.Text, { mb: 3 }, version && version + ' - ', _react2.default.createElement(_Link2.default, { to: '/changelog/' }, 'See whats new')), _images2.default['screenshot'] && _react2.default.createElement(_resinComponents.Image, { src: _images2.default['screenshot'] }));
@@ -63568,7 +63568,7 @@ var Footer = function Footer(_ref) {
   var repository = _ref.repository,
       props = _objectWithoutProperties(_ref, ['repository']);
 
-  return _react2.default.createElement(_resinComponents.Box, { py: 50, bg: props.theme.colors.gray.dark, color: 'white' }, _react2.default.createElement(_resinComponents.Flex, { my: 2, align: 'center', justify: 'center' }, _react2.default.createElement(_Link2.default, { target: true, to: '/' }, _react2.default.createElement(_resinComponents.Image, {
+  return _react2.default.createElement(_resinComponents.Box, { py: 50, bg: props.theme.colors.gray.dark, color: 'white' }, _react2.default.createElement(_resinComponents.Flex, { my: 2, align: 'center', justify: 'center', wrap: true }, _react2.default.createElement(_Link2.default, { target: true, to: '/' }, _react2.default.createElement(_resinComponents.Image, {
     mr: 3,
     style: { height: '35px' },
     src: _images2.default[repository.name]
