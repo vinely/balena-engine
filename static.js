@@ -63191,7 +63191,7 @@ exports.default = function (props) {
   return _react2.default.createElement(_Tracker2.default, {
     prefix: props.repository.name,
     analytics: props.config.settings.analytics
-  }, _react2.default.createElement(_resinComponents.Provider, { theme: mergedTheme }, _react2.default.createElement('div', null, _react2.default.createElement(_Helmet2.default, props), _react2.default.createElement(_Nav2.default, props)), (0, _reactRouterConfig.renderRoutes)(props.route.routes, props), _react2.default.createElement(_Footer2.default, props)));
+  }, _react2.default.createElement(_resinComponents.Provider, { theme: mergedTheme }, _react2.default.createElement(_Helmet2.default, props), _react2.default.createElement(_Nav2.default, props), (0, _reactRouterConfig.renderRoutes)(props.route.routes, props), _react2.default.createElement(_Footer2.default, props)));
 };
 
 /***/ }),
