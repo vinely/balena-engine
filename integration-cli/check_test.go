@@ -27,17 +27,17 @@ const (
 	privateRegistryURL = "127.0.0.1:5000"
 
 	// path to containerd's ctr binary
-	ctrBinary = "docker-containerd-ctr"
+	ctrBinary = "balena-containerd-ctr"
 
 	// the docker daemon binary to use
-	dockerdBinary = "dockerd"
+	dockerdBinary = "balenad"
 )
 
 var (
 	testEnv *environment.Execution
 
 	// the docker client binary to use
-	dockerBinary = ""
+	dockerBinary = "balena"
 )
 
 func init() {

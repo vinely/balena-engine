@@ -126,7 +126,7 @@ export DOCKER_GITCOMMIT=%{_gitcommit}
 %install
 # install binary
 install -d $RPM_BUILD_ROOT/%{_bindir}
-install -p -m 755 bundles/%{_origversion}/dynbinary-daemon/dockerd-%{_origversion} $RPM_BUILD_ROOT/%{_bindir}/dockerd
+install -p -m 755 bundles/%{_origversion}/dynbinary-daemon/balenad-%{_origversion} $RPM_BUILD_ROOT/%{_bindir}/dockerd
 
 # install proxy
 install -p -m 755 /usr/local/bin/docker-proxy $RPM_BUILD_ROOT/%{_bindir}/docker-proxy
@@ -189,14 +189,14 @@ install -p -m 644 contrib/syntax/nano/Dockerfile.nanorc $RPM_BUILD_ROOT/usr/shar
 # list files owned by the package here
 %files
 %doc AUTHORS CHANGELOG.md CONTRIBUTING.md LICENSE MAINTAINERS NOTICE README.md
-/%{_bindir}/docker
-/%{_bindir}/dockerd
-/%{_bindir}/docker-containerd
-/%{_bindir}/docker-containerd-shim
-/%{_bindir}/docker-containerd-ctr
-/%{_bindir}/docker-proxy
-/%{_bindir}/docker-runc
-/%{_bindir}/docker-init
+/%{_bindir}/balena
+/%{_bindir}/balenad
+/%{_bindir}/balena-containerd
+/%{_bindir}/balena-containerd-shim
+/%{_bindir}/balena-containerd-ctr
+/%{_bindir}/balena-proxy
+/%{_bindir}/balena-runc
+/%{_bindir}/balena-init
 /%{_sysconfdir}/udev/rules.d/80-docker.rules
 %if 0%{?is_systemd}
 /%{_unitdir}/docker.service

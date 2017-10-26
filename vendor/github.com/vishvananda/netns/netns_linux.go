@@ -116,13 +116,13 @@ func findCgroupMountpoint(cgroupType string) (string, error) {
 // borrowed from docker/utils/utils.go
 // modified to get the docker pid instead of using /proc/self
 func getThisCgroup(cgroupType string) (string, error) {
-	dockerpid, err := ioutil.ReadFile("/var/run/docker.pid")
+	dockerpid, err := ioutil.ReadFile("/var/run/balena.pid")
 	if err != nil {
 		return "", err
 	}
 	result := strings.Split(string(dockerpid), "\n")
 	if len(result) == 0 || len(result[0]) == 0 {
-		return "", fmt.Errorf("docker pid not found in /var/run/docker.pid")
+		return "", fmt.Errorf("docker pid not found in /var/run/balena.pid")
 	}
 	pid, err := strconv.Atoi(result[0])
 
@@ -169,6 +169,8 @@ func getPidForContainer(id string) (int, error) {
 		filepath.Join(cgroupRoot, cgroupThis, "lxc", id, "tasks"),
 		// With more recent dockee, cgroup will be in docker/
 		filepath.Join(cgroupRoot, cgroupThis, "docker", id, "tasks"),
+		// With more recent dockee, cgroup will be in balena/
+		filepath.Join(cgroupRoot, cgroupThis, "balena", id, "tasks"),
 	}
 
 	var filename string

@@ -117,7 +117,7 @@ func New(t testingT, dockerBinary string, dockerdBinary string, config Config) *
 		Root:          daemonRoot,
 		storageDriver: os.Getenv("DOCKER_GRAPHDRIVER"),
 		userlandProxy: userlandProxy,
-		execRoot:      filepath.Join(os.TempDir(), "docker-execroot", id),
+		execRoot:      filepath.Join(os.TempDir(), "balena-execroot", id),
 		dockerBinary:  dockerBinary,
 		dockerdBinary: dockerdBinary,
 		experimental:  config.Experimental,
@@ -213,11 +213,12 @@ func (d *Daemon) StartWithError(args ...string) error {
 // StartWithLogFile will start the daemon and attach its streams to a given file.
 func (d *Daemon) StartWithLogFile(out *os.File, providedArgs ...string) error {
 	dockerdBinary, err := exec.LookPath(d.dockerdBinary)
+
 	if err != nil {
 		return errors.Wrapf(err, "[%s] could not find docker binary in $PATH", d.id)
 	}
 	args := append(d.GlobalFlags,
-		"--containerd", "/var/run/docker/libcontainerd/docker-containerd.sock",
+		"--containerd", "/var/run/docker/libcontainerd/balena-containerd.sock",
 		"--data-root", d.Root,
 		"--exec-root", d.execRoot,
 		"--pidfile", fmt.Sprintf("%s/balena.pid", d.Folder),
@@ -267,6 +268,8 @@ func (d *Daemon) StartWithLogFile(out *os.File, providedArgs ...string) error {
 
 	go func() {
 		wait <- d.cmd.Wait()
+		fmt.Printf("yossssssssss d = %+v\n", d)
+
 		d.log.Logf("[%s] exiting daemon", d.id)
 		close(wait)
 	}()

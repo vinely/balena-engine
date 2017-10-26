@@ -25,7 +25,7 @@ func init() {
 	if DefaultClientBinary == "" {
 		// TODO: to be removed once we no longer depend on the docker cli for integration tests
 		//panic("TEST_CLIENT_BINARY must be set")
-		DefaultClientBinary = "docker"
+		DefaultClientBinary = "balena"
 	}
 }
 

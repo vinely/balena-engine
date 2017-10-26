@@ -19,15 +19,15 @@ set -e
 
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
 
-BASE=docker
+BASE=balena
 
 # modify these in /etc/default/$BASE (/etc/default/docker)
-DOCKERD=/usr/bin/dockerd
+DOCKERD=/usr/bin/balenad
 # This is the pid file managed by docker itself
 DOCKER_PIDFILE=/var/run/$BASE.pid
 # This is the pid file created/managed by start-stop-daemon
 DOCKER_SSD_PIDFILE=/var/run/$BASE-ssd.pid
-DOCKER_LOGFILE=/var/log/$BASE.log
+DOCKER_LOGFILE=/var/log/docker.log
 DOCKER_OPTS=
 DOCKER_DESC="Docker"
 

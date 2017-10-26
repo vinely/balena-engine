@@ -183,6 +183,9 @@ func (s *DockerSuite) TestInfoDebug(c *check.C) {
 	d := daemon.New(c, dockerBinary, dockerdBinary, daemon.Config{
 		Experimental: testEnv.ExperimentalDaemon(),
 	})
+
+	fmt.Printf("yossssssssssssssss 11111111111 daemon = %+v", d)
+
 	d.Start(c, "--debug")
 	defer d.Stop(c)
 
@@ -194,6 +197,7 @@ func (s *DockerSuite) TestInfoDebug(c *check.C) {
 	c.Assert(out, checker.Contains, "Goroutines")
 	c.Assert(out, checker.Contains, "System Time")
 	c.Assert(out, checker.Contains, "EventsListeners")
+	fmt.Printf("yossssssssssssssss 2222 check = %+v", c)
 	c.Assert(out, checker.Contains, "Docker Root Dir")
 }
 

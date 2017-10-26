@@ -186,6 +186,7 @@ func Args(args ...string) icmd.Cmd {
 func Daemon(d *daemon.Daemon) func(*icmd.Cmd) func() {
 	return func(cmd *icmd.Cmd) func() {
 		cmd.Command = append([]string{"--host", d.Sock()}, cmd.Command...)
+		fmt.Printf("yossssssssssss cmd = %+v", cmd)
 		return nil
 	}
 }

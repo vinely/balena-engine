@@ -396,7 +396,7 @@ Try {
         if (-not (Test-Path ".\bundles")) { New-Item ".\bundles" -ItemType Directory | Out-Null }
 
         # Perform the actual build
-        if ($Daemon) { Execute-Build "daemon" "daemon" "dockerd" }
+        if ($Daemon) { Execute-Build "daemon" "daemon" "balenad" }
         if ($Client) {
             # Get the repo and commit of the client to build.
             "hack\dockerfile\binaries-commits" | ForEach-Object {
