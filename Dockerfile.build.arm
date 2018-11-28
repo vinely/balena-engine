@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-golang:1.10
+FROM resin/raspberrypi3-golang:1.10 as build
 
 # Enable QEMU emulation
 ENTRYPOINT [ "qemu-arm-static", "-execve" ]
@@ -14,6 +14,10 @@ RUN apt-get update \
 		libsystemd-journal-dev \
 		libudev-dev
 
-COPY . /balena-engine
+COPY . /go/src/github.com/docker/docker
 
-WORKDIR /balena-engine
+WORKDIR /go/src/github.com/docker/docker
+
+RUN ./build.sh
+
+RUN ./test.sh
